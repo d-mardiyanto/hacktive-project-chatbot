@@ -1,7 +1,13 @@
 import 'dotenv/config';
 import express from 'express';
+import path from 'path';
+import cors from 'cors';
 import multer from 'multer';
 import { GoogleGenAI } from '@google/genai';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const upload = multer();
@@ -10,7 +16,12 @@ const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 const GEMINI_MODEL = 'gemini-2.5-flash';
 
+
+app.use(cors());
 app.use(express.json());
+
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.post('/generate-text', async (req, res) => {
   const {prompt} = req.body;
@@ -100,6 +111,36 @@ app.post('/generate-from-audio',upload.single('audio'), async (req, res) => {
           }
         }
       ],
+    });
+    
+    res.status(200).json({ result : response.text });
+  } catch (error) {
+    res.status(500).json({ message : error.message });
+  }
+});
+
+app.post('/api/chat', async (req, res) => {
+  const {conversation} = req.body;
+
+  try {
+    if(!Array.isArray(conversation)) throw new Error('Conversation must be an array');
+    
+    const content = conversation.map(({role,text}) => ({
+      role: role,
+      parts: [
+        {
+          text: text
+        }
+      ]
+    }));
+
+    const response = await ai.models.generateContent({
+      model: GEMINI_MODEL,
+      contents: content,
+      config: {
+        temperature: 0.9,
+        systemInstruction: "Gunakan bahasa Indonesia yang baik dan benar",
+      }
     });
     
     res.status(200).json({ result : response.text });
