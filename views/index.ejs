@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-mesh text-slate-900 overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/60 backdrop-blur-md border-b border-white/40 py-4">
+        <div class="container mx-auto px-8 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-gradient-to-tr from-sky-400 to-cyan-300 rounded-lg flex items-center justify-center shadow-md shadow-sky-200">
+                    <div class="w-4 h-4 bg-white rounded-full relative">
+                        <div class="absolute w-1.5 h-1.5 bg-sky-500 rounded-full top-1 left-0.5"></div>
+                        <div class="absolute w-1.5 h-1.5 bg-sky-500 rounded-full top-1 right-0.5"></div>
+                    </div>
+                </div>
+                <span class="text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-cyan-600">Chibi.ai</span>
+            </div>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-slate-500">
+                <a href="#about" class="hover:text-sky-600 transition-colors">Features</a>
+                <a href="#pricing" class="hover:text-sky-600 transition-colors">Pricing</a>
+                <a href="#features" class="hover:text-sky-600 transition-colors">Showcase</a>
+                <a href="#contact" class="hover:text-sky-600 transition-colors">Docs</a>
+            </div>
+            <button class="px-6 py-2 bg-sky-500 text-white rounded-full text-sm font-semibold shadow-lg shadow-sky-200 hover:bg-sky-600 transition-all active:scale-95">
+                Launch App
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen pt-32 pb-20 px-8 flex flex-col items-center justify-center relative overflow-hidden">
+        <div class="absolute top-1/4 -left-10 w-40 h-40 bg-pink-100/30 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-cyan-100/40 rounded-full blur-[120px]"></div>
+
+        <div class="container mx-auto text-center z-10 max-w-4xl">
+            <div class="inline-flex items-center px-4 py-1.5 bg-sky-100 text-sky-600 rounded-full text-xs font-bold uppercase tracking-wider mb-8 reveal">
+                ✨ New: Chibi Workspace 2.0 is Live
+            </div>
+            
+            <h1 class="text-6xl md:text-7xl font-extrabold text-slate-900 leading-[1.1] tracking-tight mb-6 reveal">
+                Meet your <span class="text-sky-500 italic">Chibi</span> <br/> AI Assistant.
+            </h1>
+            
+            <p class="text-lg md:text-xl text-slate-500 mb-10 max-w-2xl mx-auto leading-relaxed reveal" style="animation-delay: 0.1s">
+                Lumie is the first 3D-embodied AI assistant designed to make complex SaaS management feel like playing a game. Transform your workflow today.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center reveal" style="animation-delay: 0.2s">
+                <button class="px-8 py-4 bg-sky-500 text-white rounded-2xl font-bold shadow-xl shadow-sky-200/50 flex items-center justify-center gap-2 group">
+                    Get Started Free <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                </button>
+                <button class="px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-2xl font-bold shadow-sm hover:bg-slate-50 transition-all">
+                    Contact Us
+                </button>
+            </div>
+
+            <!-- Mascot Illustration Placeholder -->
+            <div class="mt-20 relative w-full max-w-lg mx-auto reveal" style="animation-delay: 0.4s">
+                <div class="absolute inset-0 bg-cyan-400 blur-[80px] opacity-20 rounded-full"></div>
+                <img src="/img/chibi.png" alt="Chibi Mascot" class="relative z-10 w-full animate-float rounded-3xl shadow-2xl border-4 border-white/50">
+                
+                <!-- Floating Labels -->
+                <div class="absolute -top-10 -right-10 glass px-4 py-3 rounded-2xl shadow-xl animate-float" style="animation-delay: 2s">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="zap" class="text-yellow-400 w-5 h-5 fill-yellow-400"></i>
+                        <span class="text-xs font-bold">Fast Processing</span>
+                    </div>
+                </div>
+                <div class="absolute bottom-10 -left-10 glass px-4 py-3 rounded-2xl shadow-xl animate-float" style="animation-delay: 1s">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="heart" class="text-red-400 w-5 h-5 fill-red-400"></i>
+                        <span class="text-xs font-bold">Friendly Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 px-6 relative">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <h2 class="text-4xl font-extrabold mb-6">More than just a <span class="text-cyan-500">chatbot</span>.</h2>
+                    <p class="text-slate-600 text-lg mb-8 leading-relaxed">
+                        ChibiAI was born from the idea that technology shouldn't be cold. Our mission is to humanize artificial intelligence by giving it a personality that learns, grows, and smiles with you.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-6 bg-white rounded-3xl shadow-sm border border-slate-100">
+                            <h4 class="text-3xl font-bold text-cyan-500 mb-1">99%</h4>
+                            <p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Accuracy</p>
+                        </div>
+                        <div class="p-6 bg-white rounded-3xl shadow-sm border border-slate-100">
+                            <h4 class="text-3xl font-bold text-indigo-500 mb-1">24/7</h4>
+                            <p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Availability</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 gap-4 reveal" style="animation-delay: 0.2s">
+                    <div class="glass p-8 rounded-[2rem] hover:rotate-1 transition-transform">
+                        <h3 class="text-xl font-bold mb-3 flex items-center gap-2">
+                            <i data-lucide="target" class="text-cyan-500"></i> Our Mission
+                        </h3>
+                        <p class="text-slate-600 text-sm">To bridge the gap between complex AI systems and everyday users through friendly, accessible design.</p>
+                    </div>
+                    <div class="glass p-8 rounded-[2rem] hover:-rotate-1 transition-transform">
+                        <h3 class="text-xl font-bold mb-3 flex items-center gap-2">
+                            <i data-lucide="eye" class="text-indigo-500"></i> Our Vision
+                        </h3>
+                        <p class="text-slate-600 text-sm">A world where every individual has a personal AI companion that is as helpful as it is charming.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 px-8 bg-slate-50/50">
+        <div class="container mx-auto max-w-6xl text-center mb-16 reveal">
+            <h2 class="text-4xl font-extrabold mb-4 text-slate-900">Superpowers of <span class="text-sky-500">Chibi</span></h2>
+            <p class="text-slate-500 max-w-xl mx-auto text-lg leading-relaxed">Packed with features that make high-tech feel like high-five.</p>
+        </div>
+
+        <div class="container mx-auto max-w-6xl grid md:grid-cols-3 gap-8">
+            <!-- Feature 1 -->
+            <div class="bg-white/40 backdrop-blur-lg border border-white/60 p-8 rounded-[32px] flex flex-col gap-4 shadow-sm hover:shadow-md transition-all reveal">
+                <div class="w-12 h-12 bg-sky-500 rounded-2xl flex items-center justify-center text-white text-xl shadow-lg shadow-sky-100">
+                    <i data-lucide="zap"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800">Smart Context</h3>
+                <p class="text-sm text-slate-500 leading-relaxed">Chibi understands your entire codebase and business logic without any manual training required.</p>
+            </div>
+            <!-- Feature 2 -->
+            <div class="bg-white/40 backdrop-blur-lg border border-white/60 p-8 rounded-[32px] flex flex-col gap-4 shadow-sm hover:shadow-md transition-all reveal" style="animation-delay: 0.1s">
+                <div class="w-12 h-12 bg-cyan-400 rounded-2xl flex items-center justify-center text-white text-xl shadow-lg shadow-cyan-100">
+                    <i data-lucide="shield"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800">Safe & Private</h3>
+                <p class="text-sm text-slate-500 leading-relaxed">Your data is yours. Chibi uses end-to-end encryption to ensure your cute secrets stay secret.</p>
+            </div>
+            <!-- Feature 3 -->
+            <div class="bg-white/40 backdrop-blur-lg border border-white/60 p-8 rounded-[32px] flex flex-col gap-4 shadow-sm hover:shadow-md transition-all reveal" style="animation-delay: 0.2s">
+                <div class="w-12 h-12 bg-indigo-500 rounded-2xl flex items-center justify-center text-white text-xl shadow-lg shadow-indigo-100">
+                    <i data-lucide="smile"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800">Sentimental AI</h3>
+                <p class="text-sm text-slate-500 leading-relaxed">Chibi understands tone and emotion, providing empathetic support that feels genuinely human.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Gallery -->
+    <section class="py-24 px-6 overflow-hidden">
+        <div class="container mx-auto max-w-6xl text-center mb-16 reveal">
+            <h2 class="text-4xl font-extrabold mb-4">Inside the <span class="text-cyan-500">ChibiUniverse</span></h2>
+            <p class="text-slate-600 max-w-xl mx-auto text-lg">A sneak peek at our futuristic interface designed for simplicity.</p>
+        </div>
+        
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid md:grid-cols-2 gap-8 reveal">
+                <div class="group relative overflow-hidden rounded-[2.5rem] shadow-2xl shadow-cyan-100/50">
+                    <img src="https://picsum.photos/seed/ai-dash1/800/500" alt="Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent flex items-end p-8">
+                        <div class="text-white">
+                            <h4 class="font-bold text-xl">Analytics Dashboard</h4>
+                            <p class="text-xs text-white/80">Real-time data visualization</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-[2.5rem] shadow-2xl shadow-indigo-100/50">
+                    <img src="https://picsum.photos/seed/ai-dash2/800/500" alt="Chat UI" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent flex items-end p-8">
+                        <div class="text-white">
+                            <h4 class="font-bold text-xl">Command Center</h4>
+                            <p class="text-xs text-white/80">Streamlined AI controls</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 px-8 bg-white/30">
+        <div class="container mx-auto max-w-6xl text-center mb-16 reveal">
+            <h2 class="text-4xl font-extrabold mb-4 text-slate-900">Friendly <span class="text-sky-500">Plan</span></h2>
+            <p class="text-slate-500 max-w-xl mx-auto text-lg leading-relaxed">Choose the perfect tier for you or your team.</p>
+        </div>
+
+        <div class="container mx-auto max-w-6xl grid md:grid-cols-3 gap-8">
+            <!-- Basic -->
+            <div class="bg-white/40 backdrop-blur-lg border border-white/60 p-10 rounded-[40px] flex flex-col gap-4 shadow-sm reveal">
+                <h3 class="text-lg font-bold text-slate-500 mb-2 uppercase tracking-widest">Starter</h3>
+                <div class="mb-4">
+                    <span class="text-5xl font-extrabold text-slate-900">$0</span>
+                    <span class="text-slate-400 text-sm">/mo</span>
+                </div>
+                <ul class="space-y-3 mb-10 text-slate-600 text-sm flex-1">
+                    <li class="flex items-center gap-3">✅ Basic Chat Access</li>
+                    <li class="flex items-center gap-3">✅ Standard Response</li>
+                    <li class="flex items-center gap-3 text-slate-300">❌ Premium Templates</li>
+                </ul>
+                <button class="w-full py-4 rounded-2xl border-2 border-slate-100 font-bold hover:bg-slate-50 transition-all text-slate-700">Get Started</button>
+            </div>
+            
+            <!-- Pro -->
+            <div class="bg-white p-10 rounded-[40px] shadow-2xl border-2 border-sky-100 relative overflow-hidden reveal scale-105 z-10">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-sky-500/10 rounded-full -mr-12 -mt-12"></div>
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-800 uppercase tracking-widest">Pro Plan</h3>
+                        <p class="text-sky-500 font-bold text-4xl mt-2">$24<span class="text-slate-400 text-sm">/mo</span></p>
+                    </div>
+                    <span class="px-2 py-1 bg-green-100 text-green-600 text-[10px] font-bold rounded uppercase">Most Popular</span>
+                </div>
+                <ul class="space-y-3 mb-10 text-slate-600 text-sm">
+                    <li class="flex items-center gap-3">✅ Unlimited Interactions</li>
+                    <li class="flex items-center gap-3">✅ Ultra-Fast Responses</li>
+                    <li class="flex items-center gap-3">✅ Advanced Integrations</li>
+                    <li class="flex items-center gap-3">✅ Priority 24/7 Support</li>
+                </ul>
+                <button class="w-full py-4 bg-slate-900 text-white rounded-2xl font-bold shadow-xl shadow-slate-900/20 hover:bg-slate-800 transition-all">Upgrade Now</button>
+            </div>
+
+            <!-- Enterprise -->
+            <div class="bg-white/40 backdrop-blur-lg border border-white/60 p-10 rounded-[40px] flex flex-col gap-4 shadow-sm reveal">
+                <h3 class="text-lg font-bold text-slate-500 mb-2 uppercase tracking-widest">Enterprise</h3>
+                <div class="mb-4">
+                    <span class="text-5xl font-extrabold text-slate-900">$99</span>
+                    <span class="text-slate-400 text-sm">/mo</span>
+                </div>
+                <ul class="space-y-3 mb-10 text-slate-600 text-sm flex-1">
+                    <li class="flex items-center gap-3">✅ Team Collaboration</li>
+                    <li class="flex items-center gap-3">✅ Custom API Access</li>
+                    <li class="flex items-center gap-3">✅ Dedicated Server</li>
+                </ul>
+                <button class="w-full py-4 rounded-2xl border-2 border-slate-100 font-bold hover:bg-slate-50 transition-all text-slate-700">Contact Sales</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 px-6">
+        <div class="container mx-auto max-w-6xl text-center mb-16 reveal">
+            <h2 class="text-4xl font-extrabold mb-4">Loved by <span class="text-cyan-500">Innovators</span></h2>
+        </div>
+        
+        <div class="container mx-auto max-w-6xl grid md:grid-cols-3 gap-8">
+            <div class="glass p-8 rounded-[2rem] reveal">
+                <div class="flex gap-1 mb-4 text-yellow-400">
+                    <i data-lucide="star" class="fill-current"></i>
+                    <i data-lucide="star" class="fill-current"></i>
+                    <i data-lucide="star" class="fill-current"></i>
+                    <i data-lucide="star" class="fill-current"></i>
+                    <i data-lucide="star" class="fill-current"></i>
+                </div>
+                <p class="text-slate-700 italic mb-6">"ChibiAI changed how my team views automation. It's not a tool anymore, it's our digital teammate."</p>
+                <div class="flex items-center gap-4">
+                    <img src="https://i.pravatar.cc/150?u=1" class="w-12 h-12 rounded-full border-2 border-white shadow-md">
+                    <div>
+                        <h5 class="font-bold text-sm text-slate-900">Sarah Jenkins</h5>
+                        <p class="text-[10px] uppercase font-bold text-slate-400 tracking-widest">CEO, Skyflow</p>
+                    </div>
+                </div>
+            </div>
+            <div class="glass p-8 rounded-[2rem] reveal" style="animation-delay: 0.1s">
+                <div class="flex gap-1 mb-4 text-yellow-400">
+                    <i data-lucide="star" class="fill-current"></i>
+                    <i data-lucide="star" class="fill-current"></i>
+                    <i data-lucide="star" class="fill-current"></i>
+                    <i data-lucide="star" class="fill-current"></i>
+                    <i data-lucide="star" class="fill-current"></i>
+                </div>
+                <p class="text-slate-700 italic mb-6">"The most friendly UI I've ever encountered. The chatbot feature is miles ahead of any legacy LLM platform."</p>
+                <div class="flex items-center gap-4">
+                    <img src="https://i.pravatar.cc/150?u=2" class="w-12 h-12 rounded-full border-2 border-white shadow-md">
+                    <div>
+                        <h5 class="font-bold text-sm text-slate-900">Mark Thompson</h5>
+                        <p class="text-[10px] uppercase font-bold text-slate-400 tracking-widest">Lead Dev, PixelMind</p>
+                    </div>
+                </div>
+            </div>
+            <div class="glass p-8 rounded-[2rem] reveal" style="animation-delay: 0.2s">
+                <div class="flex gap-1 mb-4 text-yellow-400">
+                    <i data-lucide="star" class="fill-current"></i>
+                    <i data-lucide="star" class="fill-current"></i>
+                    <i data-lucide="star" class="fill-current"></i>
+                    <i data-lucide="star" class="fill-current"></i>
+                    <i data-lucide="star" class="fill-current"></i>
+                </div>
+                <p class="text-slate-700 italic mb-6">"Futuristic yet grounded. ChibiAI managed to make AI feel safe and incredibly productive at the same time."</p>
+                <div class="flex items-center gap-4">
+                    <img src="https://i.pravatar.cc/150?u=3" class="w-12 h-12 rounded-full border-2 border-white shadow-md">
+                    <div>
+                        <h5 class="font-bold text-sm text-slate-900">Elena Rodriguez</h5>
+                        <p class="text-[10px] uppercase font-bold text-slate-400 tracking-widest">Product Designer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-6 relative">
+        <div class="container mx-auto max-w-5xl">
+            <div class="glass rounded-[3rem] p-8 md:p-16 flex flex-col md:flex-row gap-12 overflow-hidden relative reveal">
+                <div class="md:w-1/2">
+                    <h2 class="text-4xl font-extrabold mb-6">Let's <span class="text-indigo-500">Connect</span>.</h2>
+                    <p class="text-slate-600 mb-8">Have questions or want to partner up? Chibi is waiting to hear from you!</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-cyan-100 flex items-center justify-center text-cyan-600 shrink-0">
+                                <i data-lucide="mail"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-sm">Email Us</h5>
+                                <p class="text-xs text-slate-500">hello@chibiai.futur</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-indigo-100 flex items-center justify-center text-indigo-600 shrink-0">
+                                <i data-lucide="map-pin"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-sm">Our Lab</h5>
+                                <p class="text-xs text-slate-500">42 Future Way, Neo Tokyo, Cloud 9</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 mt-10">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-cyan-500 hover:text-white transition-all"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-cyan-500 hover:text-white transition-all"><i data-lucide="github" class="w-5 h-5"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-cyan-500 hover:text-white transition-all"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <form class="space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="space-y-2">
+                                <label class="text-[10px] font-bold uppercase tracking-wider text-slate-400 px-2">Name</label>
+                                <input type="text" placeholder="Your Name" class="w-full bg-white/50 border border-slate-100 p-4 rounded-2xl outline-none focus:ring-2 focus:ring-cyan-500 transition-all">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[10px] font-bold uppercase tracking-wider text-slate-400 px-2">Email</label>
+                                <input type="email" placeholder="Your Email" class="w-full bg-white/50 border border-slate-100 p-4 rounded-2xl outline-none focus:ring-2 focus:ring-cyan-500 transition-all">
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-bold uppercase tracking-wider text-slate-400 px-2">Message</label>
+                            <textarea placeholder="How can Chibi help?" rows="4" class="w-full bg-white/50 border border-slate-100 p-4 rounded-2xl outline-none focus:ring-2 focus:ring-cyan-500 transition-all"></textarea>
+                        </div>
+                        <button type="button" class="w-full bg-cyan-500 text-white py-4 rounded-2xl font-bold shadow-xl shadow-cyan-200 hover:bg-cyan-600 transition-all">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-white/40">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <p class="text-[11px] text-slate-400 uppercase tracking-widest font-bold">© 2026 ChibiAI Technologies. Built for the future of SaaS.</p>
+            
+            <div class="flex gap-4">
+                <div class="w-8 h-8 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center text-xs text-slate-400 hover:text-sky-500 transition-all cursor-pointer"><i data-lucide="twitter" class="w-4 h-4"></i></div>
+                <div class="w-8 h-8 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center text-xs text-slate-400 hover:text-sky-500 transition-all cursor-pointer"><i data-lucide="linkedin" class="w-4 h-4"></i></div>
+                <div class="w-8 h-8 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center text-xs text-slate-400 hover:text-sky-500 transition-all cursor-pointer"><i data-lucide="github" class="w-4 h-4"></i></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Chatbot Button -->
+    <button id="chat-toggle" class="fixed bottom-8 right-8 w-16 h-16 bg-gradient-to-tr from-sky-600 to-cyan-500 rounded-full shadow-2xl flex items-center justify-center text-white border-4 border-white transform hover:scale-110 active:scale-95 transition-all z-[100] animate-pulse-glow">
+        <i data-lucide="message-circle" class="w-8 h-8"></i>
+        <div class="absolute top-0 right-0 w-4 h-4 bg-green-400 border-2 border-white rounded-full"></div>
+    </button>
+
+    <!-- Chat Box -->
+    <div id="chat-box" class="fixed bottom-28 right-8 w-[95%] md:w-[440px] lg:w-[520px] h-[80vh] max-h-[720px] bg-white rounded-[32px] shadow-2xl border border-sky-100 flex flex-col overflow-hidden translate-y-full opacity-0 pointer-events-none transition-all duration-500 origin-bottom-right z-[100]">
+        <!-- Chat Header -->
+        <div class="p-4 bg-gradient-to-r from-sky-500 to-cyan-400 text-white flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-xl shadow-md">
+                    🤖
+                </div>
+                <div>
+                    <h4 class="text-white font-bold text-sm leading-tight">Chibi Assistant</h4>
+                    <p class="text-[10px] opacity-80 font-medium">Online • Active Now</p>
+                </div>
+            </div>
+            <button id="chat-close" class="text-white opacity-60 hover:opacity-100 transition-colors">
+                <i data-lucide="minimize-2"></i>
+            </button>
+        </div>
+        
+        <!-- Messages Area -->
+        <div id="chat-messages" class="flex-1 overflow-y-auto p-4 scroll-smooth bg-slate-50/10">
+            <div class="flex justify-start mb-4">
+                <div class="chat-bubble-ai max-w-[85%] px-4 py-2 text-xs">
+                    Hi there! I'm Chibi. How can I help you automate your workflow today? ✨
+                </div>
+            </div>
+            
+            <!-- Dynamic Messages Go Here -->
+
+            <!-- Typing Indicator -->
+            <div id="typing-indicator" class="hidden flex justify-start mb-4">
+                <div class="chat-bubble-ai px-4 py-2 flex gap-1">
+                    <span class="w-1 h-1 bg-sky-200 rounded-full animate-bounce"></span>
+                    <span class="w-1 h-1 bg-sky-300 rounded-full animate-bounce" style="animation-delay: 0.2s"></span>
+                    <span class="w-1 h-1 bg-sky-400 rounded-full animate-bounce" style="animation-delay: 0.4s"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Suggestions -->
+        <div class="px-4 pb-2 flex gap-2 overflow-x-auto no-scrollbar">
+            <button class="suggestion-btn flex-1 py-2 px-3 bg-sky-50 text-sky-600 rounded-lg text-[10px] font-bold border border-sky-100 whitespace-nowrap">Compare Plans</button>
+            <button class="suggestion-btn flex-1 py-2 px-3 bg-sky-50 text-sky-600 rounded-lg text-[10px] font-bold border border-sky-100 whitespace-nowrap">About Me</button>
+        </div>
+        
+        <!-- Input Area -->
+        <div class="p-4 border-t border-slate-50">
+            <form id="chat-form" class="flex items-center gap-2">
+                <input id="chat-input" type="text" placeholder="Type your message..." class="flex-1 h-10 bg-slate-100 rounded-full px-4 text-xs text-slate-800 placeholder-slate-400 border-none outline-none focus:ring-2 focus:ring-sky-500 transition-all">
+                <button type="submit" class="w-10 h-10 bg-sky-500 rounded-full flex items-center justify-center text-white shadow-lg shadow-sky-100 hover:bg-sky-600 transition-all">
+                    🚀
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Initialization Script -->
+    <script>
+        // Initialize Lucide
+        lucide.createIcons();
+    </script>
+    <script src="/js/app.js"></script>
+</body>
+</html>

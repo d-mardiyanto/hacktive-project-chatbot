@@ -1,0 +1,40 @@
+# Chibi.ai Pricing Plans
+
+There are 3 tiers. All prices are billed per month (USD).
+
+## 1. Starter — $0/mo
+- Basic Chat Access
+- Standard Response
+- Does NOT include Premium Templates
+- Best for: individuals trying Chibi for the first time.
+
+## 2. Pro Plan — $24/mo  (Most Popular)
+- Unlimited Interactions
+- Ultra-Fast Responses
+- Advanced Integrations
+- Priority 24/7 Support
+- Best for: power users and small teams that need speed and integrations.
+
+## 3. Enterprise — $99/mo
+- Team Collaboration
+- Custom API Access
+- Dedicated Server
+- Best for: organizations needing collaboration, custom APIs, and dedicated infrastructure.
+
+## Quick Comparison
+
+| Feature                  | Starter ($0) | Pro ($24)   | Enterprise ($99) |
+|--------------------------|--------------|-------------|------------------|
+| Chat Access              | Basic        | Unlimited   | Unlimited        |
+| Response Speed           | Standard     | Ultra-Fast  | Ultra-Fast       |
+| Premium Templates        | No           | Yes         | Yes              |
+| Advanced Integrations    | No           | Yes         | Yes              |
+| Priority 24/7 Support    | No           | Yes         | Yes              |
+| Team Collaboration       | No           | No          | Yes              |
+| Custom API Access        | No           | No          | Yes              |
+| Dedicated Server         | No           | No          | Yes              |
+
+## Recommendation Logic
+- Solo / casual use → Starter
+- Professional, daily use, integrations → Pro
+- Team / company-wide deployment with custom needs → Enterprise

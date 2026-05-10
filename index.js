@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import express from 'express';
 import path from 'path';
+import fs from 'fs';
 import cors from 'cors';
 import multer from 'multer';
 import { GoogleGenAI } from '@google/genai';
@@ -8,6 +9,17 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+// Load all .txt/.md files in /knowledge as pre-knowledge for the chatbot
+function loadKnowledge() {
+  const dir = path.join(__dirname, 'knowledge');
+  if (!fs.existsSync(dir)) return '';
+  return fs.readdirSync(dir)
+    .filter(f => /\.(txt|md)$/i.test(f))
+    .map(f => `--- ${f} ---\n${fs.readFileSync(path.join(dir, f), 'utf-8')}`)
+    .join('\n\n');
+}
+const KNOWLEDGE_BASE = loadKnowledge();
 
 const app = express();
 const upload = multer();
@@ -20,7 +32,14 @@ const GEMINI_MODEL = 'gemini-2.5-flash';
 app.use(cors());
 app.use(express.json());
 
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/', (req, res) => {
+  res.render('index', { title: 'Chibi.ai - Friendly AI Assistant' });
+});
 
 
 app.post('/generate-text', async (req, res) => {
@@ -139,7 +158,15 @@ app.post('/api/chat', async (req, res) => {
       contents: content,
       config: {
         temperature: 0.9,
-        systemInstruction: "Gunakan bahasa Indonesia yang baik dan benar",
+        systemInstruction: [
+          "You are Chibi, a friendly, playful AI assistant for Chibi.ai. Keep replies concise and engaging. Use emojis occasionally.",
+          "Answer in the same language the user uses (Indonesian or English).",
+          "Use the KNOWLEDGE BASE below as the source of truth for product/pricing questions. If the answer is not in it, say you are not sure.",
+          "",
+          "=== KNOWLEDGE BASE ===",
+          KNOWLEDGE_BASE,
+          "=== END KNOWLEDGE BASE ===",
+        ].join('\n'),
       }
     });
     

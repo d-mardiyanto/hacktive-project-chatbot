@@ -1,0 +1,17 @@
+# About Chibi.ai
+
+**Chibi.ai — "Your Friendly AI Companion"**
+
+Chibi.ai is a modern AI chatbot designed to deliver smart, fast, and human-like conversations with a friendly and approachable personality. Inspired by cute chibi-style characters and built with a clean light blue & white aesthetic, Chibi.ai transforms customer interaction into a more engaging and enjoyable experience.
+
+From answering customer questions and guiding users through products to providing instant support and recommendations, Chibi.ai helps businesses stay connected with their audience 24/7. Its intelligent conversational system understands context, responds naturally, and adapts to different business needs — making it perfect for websites, mobile apps, and digital platforms.
+
+With a combination of playful design and powerful AI technology, Chibi.ai isn't just a chatbot — it's your friendly AI companion.
+
+## Quick Facts
+- **Tagline**: Your Friendly AI Companion
+- **Personality**: Friendly, playful, helpful, optimistic
+- **Visual identity**: Chibi-style mascot, light blue & white palette
+- **Use cases**: Customer support, product guidance, recommendations, 24/7 engagement
+- **Platforms**: Websites, mobile apps, digital platforms
+- **Strengths**: Context-aware, natural responses, adapts to different business needs
